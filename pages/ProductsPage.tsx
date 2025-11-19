@@ -1,10 +1,9 @@
-
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { PRODUCTS, CATEGORIES } from '../constants';
 import ProductCard from '../components/ProductCard';
 
-const ProductsPage: React.FC = () => {
+const ProductsPage = () => {
   const location = useLocation();
   const [activeFilter, setActiveFilter] = useState('All');
 
@@ -19,37 +18,39 @@ const ProductsPage: React.FC = () => {
     : PRODUCTS.filter(product => product.category === activeFilter);
 
   return (
-    <div className="bg-white">
+    <div className="bg-base">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-extrabold text-dark">Our Products</h1>
-          <p className="mt-4 text-lg text-gray-600">Explore our extensive collection of high-quality materials.</p>
+          <h1 className="text-4xl font-extrabold text-brown">Our Products</h1>
+          <p className="mt-4 text-lg text-dark">Explore our extensive collection of high-quality materials.</p>
         </div>
         
         <div className="flex flex-col md:flex-row">
           {/* Sidebar Filters */}
           <aside className="w-full md:w-1/4 lg:w-1/5 pr-0 md:pr-8 mb-8 md:mb-0">
-            <h2 className="text-xl font-bold mb-4">Categories</h2>
-            <ul className="space-y-2">
-              <li>
-                <button 
-                  onClick={() => setActiveFilter('All')} 
-                  className={`w-full text-left p-2 rounded ${activeFilter === 'All' ? 'bg-primary text-white' : 'hover:bg-gray-200'}`}
-                >
-                  All Products
-                </button>
-              </li>
-              {CATEGORIES.map(category => (
-                <li key={category.id}>
+            <div className="p-4 rounded-lg bg-light shadow-sm">
+              <h2 className="text-xl font-bold text-brown mb-4">Categories</h2>
+              <ul className="space-y-2">
+                <li>
                   <button 
-                    onClick={() => setActiveFilter(category.name)} 
-                    className={`w-full text-left p-2 rounded ${activeFilter === category.name ? 'bg-primary text-white' : 'hover:bg-gray-200'}`}
+                    onClick={() => setActiveFilter('All')} 
+                    className={`w-full text-left p-3 rounded-lg transition-colors ${activeFilter === 'All' ? 'bg-primary text-light' : 'hover:bg-gray-200'}`}
                   >
-                    {category.name}
+                    All Products
                   </button>
                 </li>
-              ))}
-            </ul>
+                {CATEGORIES.map(category => (
+                  <li key={category.id}>
+                    <button 
+                      onClick={() => setActiveFilter(category.name)} 
+                      className={`w-full text-left p-3 rounded-lg transition-colors ${activeFilter === category.name ? 'bg-primary text-light' : 'hover:bg-gray-200'}`}
+                    >
+                      {category.name}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </aside>
           
           {/* Product Grid */}
@@ -62,8 +63,8 @@ const ProductsPage: React.FC = () => {
               </div>
             ) : (
               <div className="text-center py-16">
-                 <h3 className="text-2xl font-semibold text-dark">No Products Found</h3>
-                 <p className="text-gray-600 mt-2">There are no products matching the selected category.</p>
+                 <h3 className="text-2xl font-semibold text-brown">No Products Found</h3>
+                 <p className="text-dark mt-2">There are no products matching the selected category.</p>
               </div>
             )}
           </main>

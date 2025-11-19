@@ -11,11 +11,11 @@ import GalleryPage from './pages/GalleryPage';
 import DealerEnquiryPage from './pages/DealerEnquiryPage';
 import ScrollToTop from './components/ScrollToTop';
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <HashRouter>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen bg-light font-sans text-dark">
+      <div className="flex flex-col min-h-screen bg-base font-sans text-dark">
         <Header />
         <main className="flex-grow">
           <Routes>

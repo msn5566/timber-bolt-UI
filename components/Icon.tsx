@@ -5,8 +5,7 @@ interface IconProps {
   className?: string;
 }
 
-const Icon: React.FC<IconProps> = ({ icon, className }) => {
-  // FIX: Replaced JSX.Element with React.ReactElement to fix "Cannot find namespace 'JSX'" error.
+const Icon = ({ icon, className }: IconProps) => {
   const icons: { [key: string]: React.ReactElement } = {
     logo: <path strokeLinecap="round" strokeLinejoin="round" d="M14.25 6.087c0-1.718-.656-3.3-1.76-4.482A6.002 6.002 0 003.05 3.055c-1.614 2.158-1.614 5.732 0 7.89l.01.012c1.333 1.776 3.48 2.89 5.88 2.89h1.31c.455 0 .895-.125 1.28-.352m2.72-6.521c0 1.718.656 3.3 1.76 4.482a6.002 6.002 0 009.438-1.966c1.613-2.158 1.613-5.732 0-7.89l-.01-.012a6.002 6.002 0 00-5.88-2.89h-1.31c-.455 0-.895.125-1.28.352" />,
     menu: <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />,

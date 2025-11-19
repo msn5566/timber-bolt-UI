@@ -1,8 +1,7 @@
-
 import React, { useState } from 'react';
 import Icon from '../components/Icon';
 
-const ContactPage: React.FC = () => {
+const ContactPage = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [formStatus, setFormStatus] = useState('');
 
@@ -22,34 +21,34 @@ const ContactPage: React.FC = () => {
 
   return (
     <>
-      <div className="bg-primary text-white py-20">
+      <div className="bg-primary text-light py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-extrabold">Get In Touch</h1>
-          <p className="mt-4 text-xl text-blue-200">We're here to help. Contact us with any questions or for a quote.</p>
+          <p className="mt-4 text-xl text-light/80">We're here to help. Contact us with any questions or for a quote.</p>
         </div>
       </div>
 
-      <div className="bg-white py-16">
+      <div className="bg-base py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className="bg-light p-8 rounded-lg">
-              <h2 className="text-2xl font-bold text-dark mb-6">Send Us a Message</h2>
+            <div className="bg-light p-8 rounded-lg shadow-lg">
+              <h2 className="text-2xl font-bold text-brown mb-6">Send Us a Message</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">Full Name</label>
-                  <input type="text" name="name" id="name" value={formData.name} onChange={handleChange} required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm" />
+                  <label htmlFor="name" className="block text-sm font-medium text-dark">Full Name</label>
+                  <input type="text" name="name" id="name" value={formData.name} onChange={handleChange} required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary sm:text-sm" />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email Address</label>
-                  <input type="email" name="email" id="email" value={formData.email} onChange={handleChange} required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm" />
+                  <label htmlFor="email" className="block text-sm font-medium text-dark">Email Address</label>
+                  <input type="email" name="email" id="email" value={formData.email} onChange={handleChange} required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary sm:text-sm" />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
-                  <textarea name="message" id="message" rows={4} value={formData.message} onChange={handleChange} required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm"></textarea>
+                  <label htmlFor="message" className="block text-sm font-medium text-dark">Message</label>
+                  <textarea name="message" id="message" rows={4} value={formData.message} onChange={handleChange} required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary sm:text-sm"></textarea>
                 </div>
                 <div>
-                  <button type="submit" className="w-full inline-flex justify-center py-3 px-4 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-primary hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                  <button type="submit" className="w-full inline-flex justify-center py-3 px-4 border border-transparent shadow-sm text-base font-medium rounded-md text-light bg-secondary hover:brightness-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary">
                     Send Message
                   </button>
                 </div>
@@ -59,35 +58,35 @@ const ContactPage: React.FC = () => {
             
             {/* Contact Details */}
             <div>
-              <h2 className="text-2xl font-bold text-dark mb-6">Contact Information</h2>
+              <h2 className="text-2xl font-bold text-brown mb-6">Contact Information</h2>
               <ul className="space-y-6">
                 <li className="flex items-start">
                   <Icon icon="location" className="flex-shrink-0 h-8 w-8 text-secondary mt-1"/>
                   <div className="ml-4">
-                    <h3 className="text-lg font-semibold">Our Address</h3>
-                    <p className="text-gray-600">123 Industrial Way, Suite 45, Buildtown, ST 12345</p>
+                    <h3 className="text-lg font-semibold text-brown">Our Address</h3>
+                    <p className="text-dark">456 Timber Lane, Millville, Forest State 54321</p>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <Icon icon="phone" className="flex-shrink-0 h-8 w-8 text-secondary mt-1"/>
                   <div className="ml-4">
-                    <h3 className="text-lg font-semibold">Phone</h3>
-                    <p className="text-gray-600">(123) 456-7890</p>
+                    <h3 className="text-lg font-semibold text-brown">Phone</h3>
+                    <p className="text-dark">(555) 123-9876</p>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <Icon icon="email" className="flex-shrink-0 h-8 w-8 text-secondary mt-1"/>
                   <div className="ml-4">
-                    <h3 className="text-lg font-semibold">Email</h3>
-                    <p className="text-gray-600">sales@timberandbolt.com</p>
+                    <h3 className="text-lg font-semibold text-brown">Email</h3>
+                    <p className="text-dark">contact@plywoodemporium.com</p>
                   </div>
                 </li>
               </ul>
               <div className="mt-8">
-                 <h3 className="text-lg font-semibold">Store Hours</h3>
-                 <p className="text-gray-600 mt-2">Monday - Friday: 8:00 AM - 6:00 PM</p>
-                 <p className="text-gray-600">Saturday: 9:00 AM - 4:00 PM</p>
-                 <p className="text-gray-600">Sunday: Closed</p>
+                 <h3 className="text-lg font-semibold text-brown">Store Hours</h3>
+                 <p className="text-dark mt-2">Monday - Friday: 8:00 AM - 6:00 PM</p>
+                 <p className="text-dark">Saturday: 9:00 AM - 4:00 PM</p>
+                 <p className="text-dark">Sunday: Closed</p>
               </div>
             </div>
           </div>

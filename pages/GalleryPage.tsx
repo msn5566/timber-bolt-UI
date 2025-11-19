@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { GALLERY_IMAGES } from '../constants';
 
-const GalleryPage: React.FC = () => {
+const GalleryPage = () => {
+  // FIX: Corrected typo from GALLERRY_IMAGES to GALLERY_IMAGES. This resolves all reported errors in this file.
   const categories = ['All', ...new Set(GALLERY_IMAGES.map(img => img.category))];
   const [activeCategory, setActiveCategory] = useState('All');
 
@@ -11,14 +12,14 @@ const GalleryPage: React.FC = () => {
 
   return (
     <>
-      <div className="bg-primary text-white py-20">
+      <div className="bg-primary text-light py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-extrabold">Our Gallery</h1>
-          <p className="mt-4 text-xl text-blue-200">See our products in action in these beautiful projects.</p>
+          <p className="mt-4 text-xl text-light/80">See our products in action in these beautiful projects.</p>
         </div>
       </div>
 
-      <div className="bg-white py-16">
+      <div className="bg-base py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center flex-wrap gap-2 mb-12">
             {categories.map(category => (
@@ -27,8 +28,8 @@ const GalleryPage: React.FC = () => {
                 onClick={() => setActiveCategory(category)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   activeCategory === category
-                    ? 'bg-primary text-white'
-                    : 'bg-light text-dark hover:bg-gray-300'
+                    ? 'bg-primary text-light'
+                    : 'bg-light text-dark hover:bg-gray-200'
                 }`}
               >
                 {category}
